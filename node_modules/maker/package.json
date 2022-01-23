@@ -1,0 +1,34 @@
+{
+  "name": "maker",
+  "version": "0.1.11",
+  "author": "Mike Vegeto <michael.vegeto@gmail.com>",
+  "description": "Generates files from various templates and inputs",
+  "main": "./maker",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "keywords": [
+    "file",
+    "generate",
+    "template",
+    "create",
+    "source",
+    "maker"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://raw.github.com/ZECTBynmo/maker/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/ZECTBynmo/maker.git"
+  },
+  "dependencies": {
+    "wrench": "~1.4.4",
+    "traverse": "~0.6.3",
+    "clone": "~0.1.6",
+    "isbinaryfile": "~0.1.9"
+  }
+}

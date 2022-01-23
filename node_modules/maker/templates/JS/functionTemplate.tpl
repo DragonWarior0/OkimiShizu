@@ -1,0 +1,5 @@
+//////////////////////////////////////////////////////////////////////////
+// ~~comment~~
+~~className~~.prototype.~~functionName~~() {
+	~~functionBody~~
+} // end ~~functionName~~()
