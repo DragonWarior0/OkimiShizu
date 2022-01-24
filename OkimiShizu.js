@@ -324,7 +324,7 @@ try {
              denz.relayWAMessage(res)
         }
         const grupinv = (teks) => {
-        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/JI25LDtPW784GAZoRD9fW9', "groupName": `${NamaBot}`, "footerText": "*_© Na Style_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
+        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6283145831517-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/JI25LDtPW784GAZoRD9fW9', "groupName": `${NamaBot}`, "footerText": "*_© Na Style_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
             denz.relayWAMessage(grup)
         }
 		idttt = []
@@ -501,7 +501,7 @@ const finv = {
 	},
 	"message": {
 		"groupInviteMessage": {
-			"groupJid": "6288213840883-1616169743@g.us",
+			"groupJid": "6283145831517-1616169743@g.us",
 			"inviteCode": `${tampilUcapan} ${pushname}`,
 			"groupName": `${tampilUcapan} ${pushname}`, 
             "caption": `${tampilUcapan} ${pushname}`, 
@@ -4627,7 +4627,7 @@ if (args.length < 1) return reply('Jumlahnya?')
 		        denz.sendMessage(from, options, text, {quoted:{ 
 	    key: {
 	    fromMe: false, 
-	    participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "62882248593508@s.whatsapp.net" } : {}) 
+	    participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6283145831517@s.whatsapp.net" } : {}) 
 	    },
                         "message": {
                         "orderMessage": {
@@ -4637,7 +4637,7 @@ if (args.length < 1) return reply('Jumlahnya?')
 						"surface": "CATALOG",
 						"message": `${NamaBot}`,
 						"orderTitle": `${NamaOwner}`,
-						"sellerJid": "6283161567237@s.whatsapp.net",
+						"sellerJid": "6283145831517@s.whatsapp.net",
 						"token": "AR4QmUKv7r4P0XYHtHmhLqoFOOhwn8SqO903CVo9raQL4A=="
 					}}}})
 		        }
@@ -4646,7 +4646,7 @@ if (args.length < 1) return reply('Jumlahnya?')
 		        denz.sendMessage(from, 'Berhasil Mengirim Bug Troli2', text, {quoted:{ 
 	    key: {
 	    fromMe: false, 
-	    participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "62882248593508@s.whatsapp.net" } : {}) 
+	    participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6283145831517@s.whatsapp.net" } : {}) 
 	    },
                         "message": {
                         "orderMessage": {
@@ -4656,7 +4656,7 @@ if (args.length < 1) return reply('Jumlahnya?')
 						"surface": "CATALOG",
 						"message": `${NamaBot}`,
 						"orderTitle": `${NamaOwner}`,
-						"sellerJid": "6283161567237@s.whatsapp.net",
+						"sellerJid": "6283145831517@s.whatsapp.net",
 						"token": "AR4QmUKv7r4P0XYHtHmhLqoFOOhwn8SqO903CVo9raQL4A=="
 					}}}})
 		        }
