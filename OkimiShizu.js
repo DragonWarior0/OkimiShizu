@@ -2833,7 +2833,7 @@ for (let i of ownerNumber) {
 const vname = denz.contacts[i] != undefined ? denz.contacts[i].vname || denz.contacts[i].notify : undefined
 ini_list.push({
 "displayName": `Developer ${NamaBot}`,
-"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Dcode Denpa;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Okimi Shizu • Akemi;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
 })
 }
 denz.sendMessage(from, {
