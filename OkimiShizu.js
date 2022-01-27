@@ -2474,7 +2474,7 @@ const tod = await fetchJson(
 var nih_buff = await getBuffer(tod.picurl);
 const tt = `*INSTAGRAM STALK*
 
-\nUsername: ${tod.username}\nFullname: ${tod.fullname}\npostingan: ${tod.post}\ncategory_akun: ${tod.category_name}\nverified: ${tod.verified_user}\nprivate: ${tod.private_user}\nFollowing: ${tod.following}\nFollower: ${tod.followers}\nBio:\n${tod.bio}`;
+\nUsername: ${tod.username}\nFullname: ${tod.fullname}\npostingan: ${tod.post}\ncategory_akun: ${tod.category_name}\nverified: ${tod.veied_user}\nprivate: ${tod.private_user}\nFollowing: ${tod.following}\nFollower: ${tod.followers}\nBio:\n${tod.bio}`;
 denz.sendMessage(from, nih_buff, image, { quoted: mek, caption: tt });
 }
 break;      
@@ -4850,7 +4850,7 @@ let thumbInfo = `*${botName}*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrl(res.all[0].image, image, {quoted: riff, caption: thumbInfo})
+sendFileFromUrl(res.all[0].image, image, {quoted: denz, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 })
