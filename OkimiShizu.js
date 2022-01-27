@@ -4807,7 +4807,7 @@ break
                     case 'play':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
-                            const playy = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
+                            const playy = await axios.get(`https://api.zeks.xyz/api/ytplaymp4?q=${body.slice(6)}&apikey=${HunterApi}`)
                             const mulaikah = playy.data.result[0].url
                             try {
                                 sticWait(from)
