@@ -4806,24 +4806,57 @@ break
 						break
                     case 'play':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                            if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
-                            const playy = await axios.get(`https://api.zeks.xyz/api/ytplaymp4?q=${body.slice(6)}&apikey=${HunterApi}`)
-                            const mulaikah = playy.data.result[0].url
-                            try {
-                                sticWait(from)
-                                yta(mulaikah)
-                                .then((res) => {
-                                    const { dl_link, thumb, title, filesizeF, filesize } = res
-                                    axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-                                    .then(async (a) => {
-                                    if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp3*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-                                    sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 PLAY MP3",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
-                                    })
-                                })
-                            } catch (err) {
-                                reply(mess.error.api)
-                            }
-                            break
+                            if (args.length < 1) return reply('Apa Yang Mau Dicari?')
+
+teks = args.join(' ')
+
+reply(mess.wait)
+              
+if (!teks.endsWith("-doc")){
+res = await yts(`${teks}`).catch(e => {
+reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+})
+reply(` Playing ${res.all[0].title}`)
+let thumbInfo = ` *Youtube Search*
+ *Judul :* ${res.all[0].title}
+ *ID Video :* ${res.all[0].videoId}
+ *Diupload Pada :* ${res.all[0].ago}
+ *Views :* ${res.all[0].views}
+ *Durasi :* ${res.all[0].timestamp}
+ *Channel :* ${res.all[0].author.name}
+*Link Channel :* ${res.all[0].author.url}
+
+*_Tunggu Proses Upload....._*
+`
+res = await y2mateA(res.all[0].url).catch(e => {
+reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
+})
+sendFileFromUrl(res[0].link, audio, {quoted: fkontak, mimetype: 'audio/mp4', filename: res[0].output})
+}
+if (teks.endsWith("-doc")){
+const tec = teks.split("-doc")
+res = await yts(`${tec}`).catch(e => {
+reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+})
+reply(`.Playing ${res.all[0].title}`)
+let thumbInfo = `*${botName}* 
+ *Judul :* ${res.all[0].title}
+ *ID Video :* ${res.all[0].videoId}
+ *Diupload Pada :* ${res.all[0].ago}
+ *Views :* ${res.all[0].views}
+ *Durasi :* ${res.all[0].timestamp}
+ *Channel :* ${res.all[0].author.name}
+*Link Channel :* ${res.all[0].author.url}
+
+*_Tunggu Proses Upload....._*
+`
+sendFileFromUrl(res.all[0].image, image, {quoted: riff, caption: thumbInfo})
+res = await y2mateA(res.all[0].url).catch(e => {
+reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
+})
+sendFileFromUrl(res[0].link, document, {quoted: fkontak, mimetype: 'audio/mp3', filename: res[0].output})
+}
+break
                             case 'video':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
