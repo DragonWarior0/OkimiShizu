@@ -4857,6 +4857,95 @@ reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
 sendFileFromUrl(res[0].link, document, {quoted: fkontak, mimetype: 'audio/mp3', filename: res[0].output})
 }
 break
+case 'playy':
+case 'lagu':
+if (isBanned) return reply(mess.ban)
+if (isBanchat) return
+
+if (args.length < 1) return reply('Apa Yang Mau Dicari?')
+teks = args.join(' ')
+reply(mess.wait)
+              
+if (!teks.endsWith("-doc")){
+res = await yts(`${teks}`).catch(e => {
+reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+})
+reply(` Playing ${res.all[0].title}`)
+let thumbInfo = ` *Youtube Search*
+ *Judul :* ${res.all[0].title}
+ *ID Video :* ${res.all[0].videoId}
+ *Diupload Pada :* ${res.all[0].ago}
+ *Views :* ${res.all[0].views}
+ *Durasi :* ${res.all[0].timestamp}
+ *Channel :* ${res.all[0].author.name}
+*Link Channel :* ${res.all[0].author.url}
+
+*_Tunggu Proses Upload....._*
+`
+res = await y2mateA(res.all[0].url).catch(e => {
+reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
+})
+sendFileFromUrl(res[0].link, audio, {quoted: fkontak, mimetype: 'audio/mp4', filename: res[0].output})
+}
+if (teks.endsWith("-doc")){
+const tec = teks.split("-doc")
+res = await yts(`${tec}`).catch(e => {
+reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+})
+reply(`.Playing ${res.all[0].title}`)
+let thumbInfo = `*${botName}* 
+ *Judul :* ${res.all[0].title}
+ *ID Video :* ${res.all[0].videoId}
+ *Diupload Pada :* ${res.all[0].ago}
+ *Views :* ${res.all[0].views}
+ *Durasi :* ${res.all[0].timestamp}
+ *Channel :* ${res.all[0].author.name}
+*Link Channel :* ${res.all[0].author.url}
+
+*_Tunggu Proses Upload....._*
+`
+sendFileFromUrl(res.all[0].image, image, {quoted: denz, caption: thumbInfo})
+res = await y2mateA(res.all[0].url).catch(e => {
+reply('_[ ! ] Error Saat Memasuki Web Y2mate_')
+})
+sendFileFromUrl(res[0].link, document, {quoted: fkontak, mimetype: 'audio/mp3', filename: res[0].output})
+}
+break
+case 'play2':
+if (isBanned) return reply(mess.ban)
+if (isBanchat) return   
+
+				  if (args.length < 1) return reply('*Masukan judul nya?*')
+                reply('Loading.... ')
+				play = args.join(" ")
+				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=ApiRifzaBot`)
+				if (anu.error) return reply(anu.error)
+				infomp3 = `*「 PLAY VIDEO 」*
+				
+Judul : ${anu.result.title}
+Source : ${anu.result.source}
+				
+*[Wait] Tunggu Sebentar..*`
+				buffer1 = await getBuffer(anu.result.url_video)
+				rifza.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted:fkontak, caption: 'Nih Gan'})
+					break               	        	 	        	 	        	
+
+          case 'fb':
+	      case 'fbdl':
+	      case 'facebook':
+	      case 'facebookdl':
+	      case 'facebookdownload':
+if (isBanned) return reply(mess.ban)
+if (isBanchat) return
+        
+              if (!q) return reply('Linknya?')
+              if (!q.includes('https://')) return reply(mess.error.Iv)
+              if (!q.includes('f')) return reply(mess.error.Iv)
+        sendButMessage(from, `[ FB DOWNLOAD ]`, `Silahkan pilih salah satu`, [
+          {buttonId: `${prefix}fbthumb ${q}`, buttonText: {displayText: '📷THUMBNAIL'}, type: 1},
+   {buttonId: `${prefix}fbvideo ${q}`, buttonText: {displayText: '️️▶️VIDEO'}, type: 1},
+        ]);
+        break; 	
                             case 'video':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
