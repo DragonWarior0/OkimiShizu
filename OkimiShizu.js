@@ -60,6 +60,8 @@ const { EmojiAPI } = require("emoji-api")
 const crypto = require('crypto')
 const emoji = new EmojiAPI()
 const speed = require('performance-now')
+
+
 const { color, bgcolor } = require('./lib/color')
 const { exec } = require('child_process')
 const { fetchJson } = require('./lib/fetcher')
