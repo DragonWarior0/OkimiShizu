@@ -112,7 +112,7 @@ headerType: 4 }
 			ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 			}
 			let buff = await getBuffer(ppimg)
-			keluar =`Selamat tinggal @${num.split('@')[0]}\nSemoga tentang disana`
+			keluar =`Selamat tinggal @${num.split('@')[0]}\nTRIMAKASIH TELAH BERGABUNG DI GRUP INI`
 			gbutsan = [{buttonId:'SERAH',buttonText:{displayText:'👋Byee'},type:1}]
 			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
 const buttonMessages = { imageMessage: mhan.message.imageMessage,
